@@ -1,3 +1,7 @@
+if (performance.navigation.type == 1) {
+    window.location.href = "logout.php";
+}
+
 cart = {};
 
 function addToCart(name, price) {

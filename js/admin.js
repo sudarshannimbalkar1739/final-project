@@ -1,3 +1,7 @@
+if (performance.navigation.type == 1) {
+    window.location.href = "logout.php";
+}
+
 
 let lastScrollY = window.scrollY;
 const header = document.querySelector("header");

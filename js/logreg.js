@@ -1,3 +1,6 @@
+if (performance.navigation.type == 1) {
+    window.location.href = "logout.php";
+}
 
 /*==========login===========*/
 const overlay = document.getElementById("overlay");
