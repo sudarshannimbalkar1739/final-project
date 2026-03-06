@@ -2,7 +2,6 @@ cart = {};
 
 function addToCart(name, price) {
     document.getElementById("cart").classList.remove("hidden");
-    document.getElementById("cartTotalValue").value = total;
 
     if (cart[name]) {
         cart[name].qty++;
@@ -33,8 +32,9 @@ function renderCart() {
     let cartItems = document.getElementById("cartItems");
     let cartTotal = document.getElementById("cartTotal");
     let cartData = document.getElementById("cartData");
+    let cartTotalValue = document.getElementById("cartTotalValue");
 
-    if (!cartItems || !cartData) return;
+    if (!cartItems || !cartData || !cartTotal || !cartTotalValue) return;
 
     let total = 0;
     cartItems.innerHTML = "";
@@ -62,4 +62,5 @@ function renderCart() {
 
     cartTotal.innerText = total;
     cartData.value = output.join(",");
+    cartTotalValue.value = total;
 }
