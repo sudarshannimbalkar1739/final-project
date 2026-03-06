@@ -298,7 +298,7 @@ include 'db.php';
 
         <table border="1" width="90%">
             <tr>
-                <th>ID</th>
+                <th>Username</th>
                 <th>Items</th>
                 <th>Quantity</th>
                 <th>Total</th>

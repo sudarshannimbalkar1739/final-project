@@ -151,7 +151,6 @@ include 'db.php';
         <h2>Users</h2>
         <table>
             <tr>
-                <th>User Id</th>
                 <th>User Name</th>
                 <th>Phone</th>
                 <th>Email</th>
@@ -168,7 +167,6 @@ include 'db.php';
 
             while ($row     = $result->fetch_assoc()) { ?>
                 <tr>
-                    <td><?= $row['users_id'] ?></td>
                     <td><?= $row['username'] ?></td>
                     <td><?= $row['phone'] ?></td>
                     <td><?= $row['email'] ?></td>
@@ -195,7 +193,6 @@ include 'db.php';
         <h2>Orders</h2>
         <table>
             <tr>
-                <th>ID</th>
                 <th>Customer Name</th>
                 <th>Food</th>
                 <th>Qty</th>
@@ -213,7 +210,6 @@ include 'db.php';
 
             while ($row = $result->fetch_assoc()) { ?>
                 <tr>
-                    <td><?= $row['order_id'] ?></td>
                     <td><?= $row['username'] ?></td>
                     <td><?= $row['food_name'] ?></td>
                     <td><?= $row['quantity'] ?></td>
@@ -240,7 +236,6 @@ include 'db.php';
         <h2>All Feedback</h2>
         <table>
             <tr>
-                <th>ID</th>
                 <th>Customer Name</th>
                 <th>Email</th>
                 <th>Rating</th>
@@ -257,7 +252,6 @@ include 'db.php';
 
             while ($row = $result->fetch_assoc()) { ?>
                 <tr>
-                    <td><?= $row['feedback_id'] ?></td>
                     <td><?= $row['username'] ?></td>
                     <td><?= $row['email'] ?></td>
                     <td><?= $row['rating'] ?></td>
