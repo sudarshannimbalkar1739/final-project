@@ -705,17 +705,8 @@ th {
     border: #090c18;
 }
 
-td {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(54, 44, 44, 0.101);
-    color: white;
-}
-
 tr:hover {
-    scale: 1.03;
+    scale: 1.02;
     transition: background 0.3s ease, transform 0.8s ease;
-}
-
-tr:hover {
     background: rgba(255, 255, 255, 0.2);
 }

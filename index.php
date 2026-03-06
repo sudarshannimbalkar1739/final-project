@@ -300,6 +300,7 @@ include 'db.php';
             <tr>
                 <th>ID</th>
                 <th>Items</th>
+                <th>Quantity</th>
                 <th>Total</th>
                 <th>Date</th>
                 <th>Delete</th>
@@ -310,19 +311,19 @@ include 'db.php';
                 $query = "SELECT * FROM orders WHERE email='$email'";
                 $result = mysqli_query($conn, $query);
             } else {
-                echo "<tr><td colspan='5'>Please login to view your orders.</td></tr>";
+                echo "<tr><td colspan='6'>Please login to view your orders.</td></tr>";
             }
             ?>
             <?php if (mysqli_num_rows($result) == 0) { ?>
                 <tr>
-                    <td colspan="5">No orders found.</td>
+                    <td colspan="6">No orders found.</td>
                 </tr>
             <?php } else ?>
             <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-
                 <tr>
                     <td><?php echo $row['username']; ?></td>
                     <td><?php echo $row['food_name']; ?></td>
+                    <td><?php echo $row['quantity']; ?></td>
                     <td>₹<?php echo $row['price']; ?></td>
                     <td><?php echo $row['order_date']; ?></td>
                     <td>
@@ -330,11 +331,15 @@ include 'db.php';
                         <!-- $table = $_POST['table_nm'];
                         $col_nm = $_POST['col_nm'];
                         $id = $_POST['id']; -->
-                        <form action="delete.php" method="post">
+                        <form action="delete.php" method="POST">
                             <input type="hidden" name="table_nm" value="orders">
-                            <input type="hidden" name="col_nm" value="orders_id">
-                            <input type="hidden" name="id" value="<?php echo $row['email']; ?>">
-                            <button type="submit">Delete</button>
+                            <input type="hidden" name="col_nm" value="order_id">
+                            <input type="hidden" name="id" value="<?php echo $row['order_id']; ?>">
+                            <button name="submit" type="submit"
+                                class="delete-btn"
+                                onclick="return confirm('Are you sure you want to delete this item?')">
+                                ❌ Delete
+                            </button>
                         </form>
                     </td>
                 </tr>

@@ -23,7 +23,7 @@ $address  = $user['address'];
 $cartData = $_POST['cartData'];
 
 if (empty($cartData)) {
-    die("Cart is empty");
+    echo "<script>alert('Cart is empty');window.location.href='index.php';</script>";
 }
 
 $items = explode(",", $cartData);
@@ -32,11 +32,13 @@ foreach ($items as $item) {
 
     list($name, $price, $qty) = explode("|", $item);
 
+    $fprice = $price * $qty;
+
     $sql = "INSERT INTO orders 
             (users_id, username, email, phone, address, food_name, price, quantity)
             VALUES 
             ('$user_id', '$username', '$email', '$phone', '$address',
-             '$name', '$price', '$qty')";
+             '$name', '$fprice', '$qty')";
 
     if (!mysqli_query($conn, $sql)) {
         die("Order Failed: " . mysqli_error($conn));

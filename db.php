@@ -146,7 +146,6 @@ CREATE TABLE IF NOT EXISTS orders (
     email VARCHAR(150) NOT NULL,
     phone VARCHAR(20) NOT NULL,
     address TEXT NOT NULL,
-    food_id INT NOT NULL,
     food_name VARCHAR(150) NOT NULL,
     price DECIMAL(10,2) NOT NULL,
     quantity INT NOT NULL,
